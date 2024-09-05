@@ -3,83 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Ghost.cc</title>
+    <title>Login - ghost.cc</title>
     <style>
         body {
             margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             height: 100vh;
-            background: black;
-            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            color: #0f0;
             font-family: 'Courier New', Courier, monospace;
             overflow: hidden;
         }
         .container {
             text-align: center;
-            border: 2px solid #0f0;
-            padding: 20px;
-            background-color: #111;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
         }
-        h1 {
-            font-size: 3em;
-            animation: neon 1.5s ease-in-out infinite alternate;
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: glow 1.5s infinite alternate;
         }
-        @keyframes neon {
+        @keyframes glow {
             from {
-                text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 15px #0f0, 0 0 20px #0f0;
+                text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 15px #0f0, 0 0 20px #0f0, 0 0 25px #0f0, 0 0 30px #0f0, 0 0 35px #0f0;
             }
             to {
-                text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0, 0 0 40px #0f0;
+                text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0, 0 0 40px #0f0, 0 0 50px #0f0, 0 0 60px #0f0, 0 0 70px #0f0;
             }
         }
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #222;
-            color: #0f0;
-            font-size: 1.2em;
+        .login-form {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
         }
-        input[type="submit"] {
-            width: 100%;
+        input[type="password"] {
             padding: 10px;
-            margin-top: 10px;
+            border: 1px solid #0f0;
+            border-radius: 4px;
+            color: #0f0;
+            background: #000;
+            font-size: 1rem;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
             border: none;
-            border-radius: 5px;
-            background-color: #0f0;
-            color: black;
-            font-size: 1.2em;
+            border-radius: 4px;
+            background: #0f0;
+            color: #000;
+            font-size: 1rem;
             cursor: pointer;
         }
-        input[type="submit"]:hover {
-            background-color: #0c0;
+        button:hover {
+            background: #0c0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>ghost.cc</h1>
-        <form id="loginForm">
-            <input type="password" id="password" placeholder="Ingrese la contraseña" required>
-            <input type="submit" value="Entrar">
-        </form>
+        <div class="logo">ghost.cc</div>
+        <div class="login-form">
+            <input type="password" id="password" placeholder="Ingrese la contraseña">
+            <button onclick="checkPassword()">Entrar</button>
+        </div>
     </div>
     <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+        function checkPassword() {
             const password = document.getElementById('password').value;
-            if (password === 'MERCA578') {
+            if (password === 'nosecomparte') {
                 window.location.href = 'download.html';
             } else {
                 alert('Contraseña incorrecta');
             }
-        });
+        }
     </script>
 </body>
 </html>
